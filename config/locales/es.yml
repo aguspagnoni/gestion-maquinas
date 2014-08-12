@@ -1,0 +1,65 @@
+es:
+  enabled: Habilitado
+  comment: "Comentario"
+  started_at: "Inició el"
+  finished_at: "Finalizado el"
+  all_changes: "Resumen de cambios en Maquinas"
+  modified_at: "Modificado el"
+  this_version: "Esta es la version %{version}"
+  user: "Usuario"
+  current_version: "Versión actual"
+  empty_version: "Este item no tiene versión aún."
+  versionate: "Versionado"
+  created: "se ingresó"
+  changes_in: "cambios en"
+  active_since: "Activo desde"
+  code: "Código"
+  went_to: "pasó de"
+  model: "Modelo"
+  view_all_machines: "Ver Todas las Maquinas"
+  recent_changes: "Cambios Recientes"
+  history_machines: "Histórico de Máquinas"
+  technician: "Técnico"
+  technicians: "Técnicos"
+  parts: "Repuestos"
+  part: "Repuesto"
+  repairments: "Reparaciones"
+  machines: "Máquinas"
+  machine: "Máquina"
+  name: "Nombre"
+  failures: "Reporte de Fallas"
+  position: "Area"
+  positions: "Areas"
+  location: "Sede"
+  locations: "Sedes"
+  category: "Categoría"
+  categories: "Categorias"
+  company_name: "Empresa"
+  cuit: "CUIT"
+  address: "Dirección"
+  telephone: "Teléfono"
+  client: "Cliente"
+  clients: "Clientes"
+  short_name: "Alias"
+  created_at: "creado el"
+  updated_at: "Última actualización"
+
+  time:
+    formats:
+      default: "%d/%m/%Y"
+      long: "%A, %-d de %B de %Y"
+      short: '%d de %b, %Y'
+    month_names: [~, enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre]
+    abbr_month_names: [~,ene, feb, mar, abr, may, jun, jul, ago, sep, oct, nov, dic]
+    day_names: [Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado]
+    abbr_day_names: [Dom, Lun, Mar, Mie, Jue, Vie, Sab]
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      long: "%A, %-d de %B de %Y"
+      short: '%d de %b, %Y'
+    month_names: [~, enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre]
+    abbr_month_names: [~,ene, feb, mar, abr, may, jun, jul, ago, sep, oct, nov, dic]
+    abbr_month_names: [ene, feb, mar, abr, may, jun, jul, ago, sep, oct, nov, dic]
+    day_names: [Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado]
+    abbr_day_names: [Dom, Lun, Mar, Mie, Jue, Vie, Sab]

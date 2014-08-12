@@ -1,0 +1,21 @@
+panel "Actual" do
+  table_for assigns[:machine] do
+    column("Código") { |m| m.code }
+    column("Modelo") { |m| m.model }
+    column("Ubicación") do |m|
+      "#{m.position.location.short_name} - #{m.position.name}" unless m.position.nil?
+    end
+    column("Fecha de modificación") { |m| m.updated_at.to_s :long }
+  end
+end
+panel "Historia" do
+  table_for assigns[:versions].order('id desc') do
+    column("Código") { |v| v.reify.code }
+    column("Modelo") { |v| v.reify.model }
+    column("Ubicación") do |v|
+      old_m = v.reify
+      "#{old_m.position.location.short_name} - #{old_m.position.name}" unless old_m.position.nil?
+    end
+    column("Fecha de modificación") { |v| v.created_at.to_s :long }
+  end
+end

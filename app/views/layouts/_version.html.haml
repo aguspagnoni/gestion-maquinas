@@ -1,0 +1,27 @@
+- if @versions.empty?
+  %p= t('empty_version')
+- else
+  %h3
+    = "#{t('current_version')} #{@versions.length}"
+  %b= "#{t('created_at')}:"
+  = @versions.last.created_at
+  %br/
+  = succeed ":" do
+    %b= t('user')
+  = AdminUser.find(@versions.last.whodunnit).email
+  %br/
+  - if @versions.length.to_i > 1
+    - if params[:version].to_i > 1 || !params[:version]
+      = link_to "Previous version", {:version => (params[:version] || @versions.length).to_i - 1}
+      %br/
+    - if params[:version]
+      %h3
+        = t('this_version', version: params[:version])
+      %b= t('modified_at')
+      = @versions[(params[:version].to_i - 1)].created_at
+      %br/
+      = succeed ":" do
+        %b Admin
+      = AdminUser.find(@versions[(params[:version].to_i - 1)].whodunnit).email
+      %br/
+      = link_to "Go to current version"
