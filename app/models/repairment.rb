@@ -11,10 +11,9 @@ class Repairment < ActiveRecord::Base
   accepts_nested_attributes_for :parts, :allow_destroy => true
 
   class << self
-
     def states
       ['EN PROCESO', 'ESPERANDO PARTES', 'ESPERANDO TECNICOS', 'FINALIZADO']
     end
-
   end
+
 end

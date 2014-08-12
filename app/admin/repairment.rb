@@ -29,12 +29,12 @@ ActiveAdmin.register Repairment do
       "<div class=\"active-form-div\">#{Part.where(repairment_id: params[:id]).map {|p| p.code }.join(',')}</div>".html_safe
     end
     f.inputs do
-      f.input :machine_id, label: t('machine'), as: :select, collection: Hash[Machine.all.map { |m| [m.custom_title, m.id] }]
+      f.input :machine_id, label: t('machine'), as: :select, collection: Machine.all
       f.input :parts, as: :select, multiple: true,
-        collection: Hash[Part.unused.order('code ASC').map { |m| [m.code, m.id] }],
+        collection: Part.unused.order('code ASC'),
         input_html: { class: 'chosen' }
       f.input :technicians, as: :select, multiple: true,
-        collection: Hash[Technician.all.order('first_name DESC').map { |t| [t.first_name, t.id] }],
+        collection: Technician.all.order('first_name DESC'),
         input_html: { class: 'chosen' }
       f.input :comment, label: t('comment')
       f.input :state, as: :select, collection: Repairment.states, include_blank: false

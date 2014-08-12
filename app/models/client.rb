@@ -7,5 +7,9 @@ class Client < ActiveRecord::Base
 		company_name.upcase
 	end
 
+  def to_s
+    custom_title
+  end
+
 	accepts_nested_attributes_for :locations, :allow_destroy => true
 end

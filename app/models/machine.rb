@@ -26,4 +26,8 @@ class Machine < ActiveRecord::Base
   def custom_title
     "#{model} en #{position.location.short_name} > #{position.name}"
   end
+
+  def to_s
+    custom_title
+  end
 end

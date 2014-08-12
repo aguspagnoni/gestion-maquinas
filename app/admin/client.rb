@@ -6,7 +6,7 @@ ActiveAdmin.register Client do
     def permitted_params
       params.permit!
     end
-  end 
+  end
 
   index title: proc { t('clients') } do
     column t('company_name'), :company_name
@@ -36,29 +36,15 @@ ActiveAdmin.register Client do
     f.actions
   end
 
-  show title: proc { t('clients') } do
+  show title: proc { t('clients') } do |client|
     attributes_table do
-      row :cuit, label: t('cuit')
-      row :address, label: t('address')
-      row :telephone, label: t('telephone')
+      row(t('cuit')) { client.cuit }
+      row(t('address')) { client.address }
+      row(t('telephone')) { client.telephone }
       row :email
-      row :created_at, label: t('created_at')
-      row :updated_at, label: t('updated_at')
+      row(t('created_at')) { client.created_at }
+      row(t('updated_at')) { client.updated_at }
     end
     active_admin_comments
   end
-
-  # See permitted parameters documentation:
-  # https://github.com/gregbell/active_admin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-  #
-  # permit_params :list, :of, :attributes, :on, :model
-  #
-  # or
-  #
-  # permit_params do
-  #  permitted = [:permitted, :attributes]
-  #  permitted << :other if resource.something?
-  #  permitted
-  # end
-  
 end

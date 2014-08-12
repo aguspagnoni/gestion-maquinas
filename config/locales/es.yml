@@ -41,8 +41,15 @@ es:
   client: "Cliente"
   clients: "Clientes"
   short_name: "Alias"
-  created_at: "creado el"
+  created_at: "Creado el"
   updated_at: "Última actualización"
+  last_sign_in_at: "Última vez conectado"
+  sign_in_count: "Veces conectado"
+  since: Desde
+  details: Detalles
+  position:
+    show:
+      title: 'Detalles del Area'
 
   time:
     formats:

@@ -14,25 +14,23 @@ ActiveAdmin.register AdminUser do
 
   index do
     selectable_column
-    id_column
     column :email
-    column :current_sign_in_at
-    column :sign_in_count
-    column :created_at
+    column t('last_sign_in_at'), :last_sign_in_at
+    column t('created_at'), :created_at
     actions
   end
 
   filter :email
-  filter :current_sign_in_at
-  filter :sign_in_count
-  filter :created_at
+  filter :last_sign_in_at, label: I18n.t('last_sign_in_at')
+  filter :sign_in_count, label: I18n.t('sign_in_count')
+  filter :created_at, label: I18n.t('created_at')
 
   show do
     panel "Admin User" do
       attributes_table_for admin_user do
         row("Email") { admin_user.email }
         row("Status") { status_tag (admin_user.enabled ? "Enabled" : "Disabled"), (admin_user.enabled ? :ok : :error) }
-        row("Ultima vez conectado") { admin_user.last_sign_in_at }
+        row(t('last_sign_in_at')) { admin_user.last_sign_in_at }
         row(t('created_at')) { admin_user.created_at }
       end
     end
