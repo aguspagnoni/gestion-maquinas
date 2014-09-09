@@ -8,4 +8,8 @@ class Location < ActiveRecord::Base
 	def custom_title
 		short_name.upcase
 	end
+
+  def to_s
+    custom_title
+  end
 end

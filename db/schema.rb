@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140804002144) do
+ActiveRecord::Schema.define(version: 20140902210135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,8 +110,12 @@ ActiveRecord::Schema.define(version: 20140804002144) do
     t.string   "provider"
     t.string   "description"
     t.integer  "repairment_id"
+    t.integer  "count",         default: 1
+    t.string   "provider_code"
+    t.integer  "provider_id"
   end
 
+  add_index "parts", ["provider_id"], name: "index_parts_on_provider_id", using: :btree
   add_index "parts", ["repairment_id"], name: "index_parts_on_repairment_id", using: :btree
 
   create_table "positions", force: true do |t|
@@ -122,6 +126,12 @@ ActiveRecord::Schema.define(version: 20140804002144) do
   end
 
   add_index "positions", ["location_id"], name: "index_positions_on_location_id", using: :btree
+
+  create_table "providers", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "repairments", force: true do |t|
     t.datetime "created_at"
@@ -160,6 +170,7 @@ ActiveRecord::Schema.define(version: 20140804002144) do
     t.string   "cellphone"
     t.string   "telephone"
     t.string   "address"
+    t.integer  "repairment_id"
   end
 
   add_index "technicians", ["repairment_id"], name: "index_technicians_on_repairment_id", using: :btree

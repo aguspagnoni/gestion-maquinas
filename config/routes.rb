@@ -2,6 +2,8 @@ GestionMaquinas::Application.routes.draw do
 
   root to: "admin/dashboard#index"
 
+  post "versions/:id/revert" => "versions#revert", as: "revert_version"
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 

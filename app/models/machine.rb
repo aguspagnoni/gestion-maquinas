@@ -3,6 +3,15 @@ class Machine < ActiveRecord::Base
 	belongs_to :category, inverse_of: :machines
 	belongs_to :position, inverse_of: :machines
   has_many :repairments
+  has_one :location, through: :position
+  has_one :client, through: :location
+
+  just_define_datetime_picker :active_since
+
+  validates :position, :category, :model, presence: true
+
+  before_save :set_default_location
+
 
 	has_paper_trail
 
@@ -20,7 +29,7 @@ class Machine < ActiveRecord::Base
       difs << "[#{t('code')}]" if prev.code != current.code
       difs << "[#{t('active_since')}]" if prev.active_since != current.active_since
     end
-    "#{first.capitalize} #{name.upcase}: #{difs.join " "}"
+    "#{first.capitalize} #{name.upcase}: #{difs.join(' ')}"
   end
 
   def custom_title
@@ -30,4 +39,11 @@ class Machine < ActiveRecord::Base
   def to_s
     custom_title
   end
+
+  private
+
+  def set_default_location
+    location ||= Location.find_by(short_name: 'STOCK')
+  end
+
 end

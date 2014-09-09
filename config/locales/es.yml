@@ -1,8 +1,17 @@
 es:
+  update: Modificación
+  create: Alta
+  destroy: Baja
+  deleted_item: Registro eliminado
+  service_provider: Proveedor de Servicios
+  count: Cantidad
+  provider_code: Código de proveedor
+  state: Estado
   enabled: Habilitado
   comment: "Comentario"
   started_at: "Inició el"
   finished_at: "Finalizado el"
+  purchased_at: "Comprado el"
   all_changes: "Resumen de cambios en Maquinas"
   modified_at: "Modificado el"
   this_version: "Esta es la version %{version}"
@@ -23,6 +32,8 @@ es:
   technicians: "Técnicos"
   parts: "Repuestos"
   part: "Repuesto"
+  provider: "Proveedor"
+  description: "Descripción"
   repairments: "Reparaciones"
   machines: "Máquinas"
   machine: "Máquina"
@@ -30,8 +41,8 @@ es:
   failures: "Reporte de Fallas"
   position: "Area"
   positions: "Areas"
-  location: "Sede"
-  locations: "Sedes"
+  location: "Locación"
+  locations: "Locaciones"
   category: "Categoría"
   categories: "Categorias"
   company_name: "Empresa"
@@ -47,9 +58,11 @@ es:
   sign_in_count: "Veces conectado"
   since: Desde
   details: Detalles
-  position:
-    show:
-      title: 'Detalles del Area'
+  place: Ubicada en
+  cellphone: Celular
+  last_name: Apellido
+  first_name: Nombre
+
 
   time:
     formats:
@@ -70,3 +83,9 @@ es:
     abbr_month_names: [ene, feb, mar, abr, may, jun, jul, ago, sep, oct, nov, dic]
     day_names: [Domingo, Lunes, Martes, Miercoles, Jueves, Viernes, Sabado]
     abbr_day_names: [Dom, Lun, Mar, Mie, Jue, Vie, Sab]
+
+  activerecord:
+    errors:
+      messages:
+        blank: Este campo no puede quedar vacio
+

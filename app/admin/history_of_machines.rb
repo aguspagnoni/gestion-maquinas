@@ -16,9 +16,17 @@ ActiveAdmin.register_page "Machine History" do
       column do
         panel "#{t('all_changes')}" do
           table_for PaperTrail::Version.order('id desc') do
-            column("Item") { |v| link_to v.item.admin_history_info(v), history_admin_machine_path(v.item) }
+            column("Item") do |v|
+              # if v.event == 'destroy'
+                # link_to "Se eliminó #{ v.reify.try(:model) }, revertir", revert_version_path(v), method: :post
+              if v.item.present?
+                link_to v.item.admin_history_info(v), history_admin_machine_path(v.item)
+              else
+                I18n.t('deleted_item')
+              end
+            end
             column("Tipo") { |v| v.item_type.underscore.humanize }
-            column("Evento") { |v| v.event.humanize }
+            column("Evento") { |v| I18n.t(v.event).humanize }
             column("Fecha de modificación") { |v| v.created_at.to_s :long }
             column("Usuario") { |v| link_to AdminUser.find(v.whodunnit).email, admin_admin_user_path(AdminUser.find(v.whodunnit)) }
           end

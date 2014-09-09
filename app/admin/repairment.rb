@@ -1,7 +1,7 @@
 ActiveAdmin.register Repairment do
   include Rails.application.routes.url_helpers
 
-  menu parent: "Proveedor de Servicios", label: proc { t('repairments') }
+  menu parent: I18n.t('service_provider'), label: proc { t('repairments') }
 
   # collection_action :autocomplete_parts_code, method: :get
 
@@ -21,8 +21,16 @@ ActiveAdmin.register Repairment do
     end
   end
 
-
-
+  filter :parts, label: I18n.t('parts')
+  filter :machine, label: I18n.t('machine')
+  filter :technicians, label: I18n.t('technicians')
+  filter :comment, label: I18n.t('comment')
+  filter :state, label: I18n.t('state')
+  filter :started_at, label: I18n.t('started_at')
+  filter :finished_at, label: I18n.t('finished_at')
+  # filter :last_sign_in_at, label: I18n.t('last_sign_in_at')
+  # filter :sign_in_count, label: I18n.t('sign_in_count')
+  # filter :created_at, label: I18n.t('created_at')
 
   form do |f|
     f.inputs "Partes utilizadas en esta reparación" do
@@ -42,6 +50,14 @@ ActiveAdmin.register Repairment do
       f.input :finished_at, label: t('finished_at'), as: :just_datetime_picker
     end
     f.actions
+  end
+
+  index title: I18n.t('repairments') do
+    column t('machine'), :machine
+    column t('comment'), :comment
+    column t('state'), :state
+    column t('started_at'), :started_at
+    column t('finished_at'), :finished_at
   end
 
 end
