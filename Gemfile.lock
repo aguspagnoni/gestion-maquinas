@@ -108,6 +108,9 @@ GEM
     erubis (2.7.0)
     excon (0.39.5)
     execjs (2.0.2)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     fog (1.23.0)
       fog-brightbox
       fog-core (~> 1.23)
@@ -273,6 +276,7 @@ DEPENDENCIES
   debugger
   debugger-pry
   devise
+  figaro
   fog
   haml
   jbuilder (~> 1.2)

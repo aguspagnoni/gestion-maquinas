@@ -17,4 +17,7 @@
 .amazons3.yml
 erd.pdf
 
+# Figaro conf
+config/application.yml
+
 .DS_Store

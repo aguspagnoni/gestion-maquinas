@@ -32,6 +32,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'figaro'
 gem "just-datetime-picker"
 gem 'chosen-rails'
 gem 'rails3-jquery-autocomplete', '1.0.12'
