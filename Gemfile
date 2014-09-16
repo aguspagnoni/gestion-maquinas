@@ -37,6 +37,7 @@ gem "just-datetime-picker"
 gem 'chosen-rails'
 gem 'rails3-jquery-autocomplete', '1.0.12'
 gem 'jquery-ui-rails'
+gem 'bootstrap-sass'
 gem 'haml'
 gem 'devise'
 gem 'app_configuration'
