@@ -21,3 +21,4 @@ erd.pdf
 config/application.yml
 
 .DS_Store
+.env
