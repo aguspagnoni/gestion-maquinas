@@ -20,7 +20,4 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: gestion_production
   pool: 5
-  username: agustinpagnoni
-  password: g3matic

@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
@@ -47,6 +49,8 @@ gem 'rmagick', '2.13.2'
 gem 'carrierwave'
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'paper_trail', '~> 3.0.0'
+
+gem 'rails_12factor', group: :production
 
 group :development do
   gem 'pry'
